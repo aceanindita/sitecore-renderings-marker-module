@@ -2,9 +2,9 @@
 using Sitecore.Mvc.Pipelines.Response.RenderRendering;
 using Sitecore.Mvc.Presentation;
 
-namespace RenderingsMarkerModule.Pipelines.MVC.ViewMarker
+namespace RenderingsMarkerModule.Pipelines.MVC.RenderingMarker
 {
-    public class RenderingsMarkerEnd : RenderRenderingProcessor
+    public class RenderMarkerStart : RenderRenderingProcessor
     {
         public override void Process(RenderRenderingArgs args)
         {
@@ -15,12 +15,12 @@ namespace RenderingsMarkerModule.Pipelines.MVC.ViewMarker
                     return;
 
                 bool isLayout = renderer is ViewRenderer &&
-                ((ViewRenderer)renderer).Rendering.RenderingType == "Layout";
+                                ((ViewRenderer) renderer).Rendering.RenderingType == "Layout";
                 bool showLayoutMarkers = Settings.GetBoolSetting("RenderingsMarkerModule.ShowLayoutMarkers", false);
 
                 if (isLayout && !showLayoutMarkers) return;
 
-                args.Writer.Write("\n<!-- END: " + renderer + " -->\n");
+                args.Writer.Write("\n<!-- START: " + renderer + " -->\n");
             }
         }
     }

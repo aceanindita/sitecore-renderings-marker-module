@@ -92,8 +92,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pipelines\MVC\ViewMarker\RenderViewMarkerEnd.cs" />
-    <Compile Include="Pipelines\MVC\ViewMarker\RenderViewMarkerStart.cs" />
+    <Compile Include="Pipelines\MVC\RenderingMarker\RenderMarkerEnd.cs" />
+    <Compile Include="Pipelines\MVC\RenderingMarker\RenderMarkerStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
